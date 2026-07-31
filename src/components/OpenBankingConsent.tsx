@@ -100,7 +100,7 @@ const OpenBankingConsent: React.FC = () => {
               { name: 'Rak Bank', logo: 'https://sillinks.com/storage/company/partners_images/4af08dd5d228c2eab744e018a8091c30.png' },
               { name: 'United Arab Bank', logo: 'https://www.uab.ae/wp-content/uploads/2022/12/UAB-Logo.png' },
             ].map((bank) => (
-              <div
+              <div role="button" tabIndex={0}
                 key={bank.name}
                 onClick={() => handleBankSelection(bank.name)}
                 className="flex items-center justify-between p-6 bg-white rounded-lg border border-gray-200 cursor-pointer hover:bg-bank-lightBlue transition-colors"
@@ -140,7 +140,7 @@ const OpenBankingConsent: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {bankAccounts.map((account, index) => (
-              <div 
+              <div role="button" tabIndex={0} 
                 key={index} 
                 className={`bg-white p-6 rounded-lg border-2 ${account.selected ? 'border-bank-red' : 'border-gray-200'}`}
                 onClick={() => toggleBankAccountSelection(index)}

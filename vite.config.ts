@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // GitHub Pages serves a project repo under /<repo>/, so assets need the prefix.
+  base: "/uae-card-onboard-flow/",
   server: {
     host: "::",
     port: 8080,

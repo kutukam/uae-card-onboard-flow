@@ -57,7 +57,7 @@ const CategorySelection: React.FC = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {categories.map((category) => (
-          <div
+          <div role="button" tabIndex={0}
             key={category.id}
             className={`card-category ${selectedCategory === category.id ? 'selected' : ''}`}
             onClick={() => handleCategorySelect(category.id as CardCategory)}
