@@ -17,7 +17,9 @@ const App = () => (
       <OnboardingProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        {/* Served from a project path on GitHub Pages, so routes are relative to it.
+            import.meta.env.BASE_URL is "/" in dev, so this is a no-op locally. */}
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/apply" element={<Onboarding />} />
