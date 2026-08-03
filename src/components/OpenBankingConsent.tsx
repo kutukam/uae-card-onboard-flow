@@ -100,13 +100,18 @@ const OpenBankingConsent: React.FC = () => {
               { name: 'Rak Bank', logo: 'https://sillinks.com/storage/company/partners_images/4af08dd5d228c2eab744e018a8091c30.png' },
               { name: 'United Arab Bank', logo: 'https://www.uab.ae/wp-content/uploads/2022/12/UAB-Logo.png' },
             ].map((bank) => (
-              <div role="button" tabIndex={0}
+              <div role="button" tabIndex={0} aria-label={bank.name}
                 key={bank.name}
                 onClick={() => handleBankSelection(bank.name)}
                 className="flex items-center justify-between p-6 bg-white rounded-lg border border-gray-200 cursor-pointer hover:bg-bank-lightBlue transition-colors"
               >
                 <div className="flex items-center">
-                  <img src={bank.logo} alt={bank.name} className="h-8 w-auto object-contain" />
+                  <span
+                    aria-hidden="true"
+                    className="h-9 w-9 shrink-0 rounded-full bg-bank-red/10 text-bank-red flex items-center justify-center text-xs font-bold tracking-tight"
+                  >
+                    {bank.name.split(' ').map((w) => w[0]).join('').slice(0, 3).toUpperCase()}
+                  </span>
                   <span className="ml-4 font-medium">{bank.name}</span>
                 </div>
                 <div className="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center">
