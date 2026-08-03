@@ -145,7 +145,7 @@ const OpenBankingConsent: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {bankAccounts.map((account, index) => (
-              <div role="button" tabIndex={0} 
+              <div role="button" tabIndex={0} aria-label={account.type}
                 key={index} 
                 className={`bg-white p-6 rounded-lg border-2 ${account.selected ? 'border-bank-red' : 'border-gray-200'}`}
                 onClick={() => toggleBankAccountSelection(index)}
